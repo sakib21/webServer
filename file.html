@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style>
+body{
+background-image:url('a.jpg');
+background-color:#cccccc;
+}
+</style>
+<script type="text/javascript">
+function validateForm()
+{
+var x=document.forms["myForm"]["Fullname"].value;
+	if(x.length <6)
+	{
+ 		alert("First name must be greater then 6 characters");
+  		return false;
+	}
+
+
+var a=document.forms["myForm"]["Username"].value;
+	if(a== null   || a=="")
+	{
+ 		alert("User name must be filled out");
+  		return false;
+	}
+
+var b =document.forms["myForm"]["Email"].value;
+var atpos=b.indexOf("@");
+var dotpos=b.lastIndexOf(".");
+	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=b.length)
+ 	 {
+  		alert("Not a valid e-mail address");
+  		return false;
+  	}
+
+var c=document.forms["myForm"]["day"].value;
+var d=document.forms["myForm"]["month"].value;
+var e=document.forms["myForm"]["year"].value;
+	if(e > 1999)
+	{
+		alert("you must be 15 yeras old");
+		return false;
+	}
+
+var f=document.forms["myForm"]["Mobilenumber"].value;
+	if(isNaN(document.myForm.f.value) ==true)
+	{
+		alert("Invalid Mobile number");
+		return false;
+	}
+}
+
+
+
+
+
+</script>
+</head>
+
+
+
+
+<body>
+
+<form name="myForm" onsubmit="return validateForm()" autocomplete="on">
+
+
+
+<div style="text-align: left; background-color:green;">
+<label style="font-size:20pt; font-family:Verdana, Geneva, sans-serif; font-color:white; "> Registration Form </label></br>
+</div>
+
+
+<div style="text-align:center; width:600;height:200; font-size:20px; font-family: Verdana; border:solid 5px; ">
+<label style="font-size:15px">Full Name :</label>
+<input type="text" name="Fullname" placeholder="name""></br>
+
+
+<label style="font-size:15px">Username :</label>
+<input type="text" name="Username" placeholder="Username""></br>
+
+<label style="font-size:15px">Email :</label>
+<input type="text" name="Email" placeholder="Email"></br>
+
+<label style="font-size:15px">Date of Birth :</label>
+<input type="text" name="day" placeholder="dd">
+<input type="text" name="month" placeholder="mm">
+<input type="text" name="year" placeholder="yy"></br>
+
+<label style="font-size:15px">Mobile number</label>
+<input type="text" name="Mobilenumber" placeholder="Mobile number""></br>
+
+<lable style="font-size:15px">Gender</lable>
+<input type="radio" name="sex" value="Male">Male</br>
+<input type="radio" name="sex" value="female">Female</br>
+
+<label style="font-size:15px">Country</label>
+<select  style="width:160px;">
+<option value="1+ baths">Pakistan</option>
+<option value="2+ baths">Australia</option>
+<option value="3+ baths">Turkey</option>
+</select>
+
+<input type="submit" value="Submit">
+</div>
+
+
+
+</form>
+</body>
+
+
+</html>
